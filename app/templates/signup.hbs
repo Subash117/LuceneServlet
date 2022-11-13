@@ -1,0 +1,18 @@
+{{page-title "Signup"}}
+{{!-- <div class="container"> --}}
+    <form method="post" class="container" action="http://localhost:8080/LuceneWithServlet/signup">
+        <center><h2>Sign Up</h2></center>
+        <p>Name:</p>
+        <input type="text" id="name" name="name" class="text-box" required><br>
+        <p>Email-Id: </p>
+        <input type="text" id="email" name="email" class="text-box" required><br>
+        <p>Enter New Password:</p>
+        <input type="password" id="pass1" class="text-box" name="pass1" {{on "input" this.setPass}} required/><br>
+        <p>Re-Enter New Password:</p>
+        <input type="password" id="pass2" name="pass2" class="text-box" {{on "input" this.checkPass}} required><br>
+        <i><p style="color:red">{{this.warn}}</p></i> 
+        <center><input class="button" type={{this.disabled}} value="Submit" class="button" ></center>
+        
+        <p>Already Have an Account? <LinkTo @route="login">Login</LinkTo></p>
+    </form>
+{{!-- </div> --}}

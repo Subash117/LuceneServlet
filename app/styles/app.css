@@ -1,0 +1,143 @@
+body
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:rgba(69, 128, 128, 0.473);
+}
+.nav-bar
+{
+    background-color: rgb(205, 73, 50);
+    padding: 10px;
+}
+.nav-item
+{
+    display: inline;
+    float: inline-end;
+}
+.nav-ele
+{
+    text-decoration: none;
+    color: black;
+    background-color: rgb(205, 73, 50);
+    font-size: large;
+    margin: none;
+    padding: 10px;
+}
+.nav-ele:hover
+{
+    background-color: rgb(154, 205, 50);
+}
+
+.query-box{
+    margin: auto;
+    width: 75.9%;
+    padding: 5px;
+    margin-bottom: 8px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table
+{
+    width: 100%;
+}
+
+.text-box
+{
+    width: 75%;
+    margin: auto;
+    height: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    text-align: center;
+}
+.file-upload-area
+{
+    border: 1px solid black;
+    height: fit-content;
+    margin: auto;
+    width: 75%;
+    padding: 5px;
+    padding-bottom: 1px;
+}
+.button
+{
+    width: 80px;
+    padding: 10px;
+    border: 1px solid rgb(154, 205, 50);
+    background-color: rgb(154, 205, 50);
+    border-radius: 3px;
+    font-weight: bolder;
+}
+.button:hover
+{
+    cursor: pointer;
+    background-color: rgb(116, 156, 37);
+}
+.container
+{
+    width: 30%;
+    margin:auto;
+    border: 1px solid coral;
+    background-color: rgb(211, 165, 106);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.file-table
+{
+    margin: auto;
+    width: 75.9%;
+    overflow: auto;
+}
+
+.red-button
+{
+    background-color: rgb(205, 73, 50);
+    border: rgb(205, 73, 50);
+    border-radius: 2px;
+    padding: 6px;
+}
+.red-button:hover
+{
+    cursor: pointer;
+    background-color: rgb(160, 57, 39);
+}
+.file-input:hover
+{
+    cursor: pointer;
+}
+.file-input::-webkit-file-upload-button,.button
+{
+    background-color: rgb(154, 205, 50);
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
+}
+.file-input::-webkit-file-upload-button:hover,.button:hover
+{
+    background-color: rgb(116, 156, 37);
+    cursor: pointer;
+}
+
+.pagination {
+    display: block;
+    margin-left:auto;
+    margin-right: auto; 
+    padding: 10px;
+    width: 75.7%;
+  }
+  
+  .pagination a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd; cursor: pointer;}

@@ -1,0 +1,68 @@
+{{page-title "Dashboard"}}
+<form action="http://localhost:8080/LuceneWithServlet/logout">
+	<input type="submit" class="red-button" style="float:right;"value="Log Out" />
+</form>
+<form method="post" class="file-upload-area" action="http://localhost:8080/LuceneWithServlet/upload" enctype='multipart/form-data'>
+	<center>
+		<h3>Upload File To Index</h3>
+		<input type="file" class="file-input" name="file" accept=".evtx" multiple="true"/>
+		<input class="button" type="submit" value="Upload" />
+	</center>
+</form>
+
+<div class="query-box">
+	<center>
+	<h3>Enter Query To Search</h3>
+	<Input class="text-box" autocomplete="off" id="query" @type="text" @value=""/>
+	<button class="button" type="button" {{on "click" this.getResults}}>Search</button>
+	</center>
+</div>
+
+<div class="file-table">
+	<table>
+		<tr>
+			<th></th>
+			<th><p>File Name</p></th>
+			<th></th>
+		</tr>
+		{{#if @model.files.length}}
+		{{#each @model.files as |file|}}
+			<tr>
+				<td><center><input {{on "click" (fn this.toggle file.fileid)}} type="checkbox" id={{file.fileid}} value={{file.fileid}}></center></td>
+				<td><p>{{file.fileName}}</p></td>
+				<td><center><form action="http://localhost:8080/LuceneWithServlet/deletefile"><input type="hidden" name="uid" value={{@model.id}}><input type="hidden" name="fileid" value={{file.fileid}} /><input type="submit" class="red-button" value="Delete"></form></center></td>
+			</tr>
+		{{/each}}
+		{{else}}
+			<tr>
+				<td></td>
+				<td>No files to show Here.Please Upload Something</td>
+				<td></td>
+			</tr>	
+		{{/if}}
+	</table>
+</div>
+
+{{#if this.currentPage}}
+	<div style="margin: auto;width:75%">
+	<h2>Results:</h2>
+	{{#each this.currentLogs as |log|}}
+		<div style="border: 1px solid black;">
+			<p>{{log}}</p>
+		</div>
+	{{/each}}
+	</div>
+{{/if}}
+
+
+{{#if this.currentPage}}
+	<div class="pagination">
+		{{#each this.pages as |page|}}
+			{{#if (eq this.currentPage page)}}
+				<a class="active"  {{on "click" (fn this.changePage page)}}>{{page}}</a>
+			{{else}}
+				<a {{on "click" (fn this.changePage page)}}>{{page}}</a>
+			{{/if}}
+		{{/each}}
+	</div>
+{{/if}}

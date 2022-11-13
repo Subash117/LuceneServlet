@@ -1,0 +1,12 @@
+{{page-title "Login"}}
+<div class="container">
+    <form method="post" action="http://localhost:8080/LuceneWithServlet/login">
+        <center><h2>Log In</h2></center>
+        <p>Email-Id: </p>
+        <input type="text" id="email" name="email" class="text-box"required><br>
+        <p>Enter Password:</p>
+        <input type="password" id="pass1" name="pass1" class="text-box" required/><br><br>
+        <center><input class="button" type="submit" value="Submit" class="button"></center>
+        <p>Don't have an Account? <LinkTo @route="signup">SignUp</LinkTo></p>
+    </form>
+</div>
